@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <title>Enquête de satisfaction </title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            Enquête de satisfaction
+        </header>
+        <div class="form-outer">
+            <form action="#">
+
+                <!--   *************
+                    *** PAGE1 ***
+                    *************-->
+
+                <div class="page">
+                    <div class="title">info</div>
+                    <div class="filed">
+                        <div class="label">Civilité</div>
+                        <select>
+                            <option value="0">Civilité</option>
+                            <option value="1">Madame</option>
+                            <option value="2">Monsieur</option>
+                        </select>
+                    </div>
+                    <div class="filed">
+                        <div class="label">Nom</div>
+                        <input type="text">
+                    </div>
+                    <div class="filed">
+                        <div class="label">Prénom</div>
+                        <input type="text">
+                    </div>
+                    <div class="filed">
+                        <div class="label">Email</div>
+                        <input type="text">
+                    </div>
+                    <div class="filed">
+                        <div class="label">Téléphone</div>
+                        <input type="text">
+                    </div>
+                    <div class="filed">
+                        <div class="label">Situation Proffesionel</div>
+                        <select>
+                            <option value="0">Cadre</option>
+                            <option value="1">Fonctionnaire</option>
+                            <option value="3">Employer</option>
+                            <option value="4">Etudaint</option>
+                            <option value="5">Sans emploi</option>
+                        </select>
+                    </div>
+                    <div class="filed btns">
+                       <button>Suivant</button>
+                    </div>
+                </div>
+
+                <!--   ************
+                        *** PAGE2 ***
+                        *************-->
+
+                <div class="page">
+                    <div class="title">DESTINATION</div>
+                    <div class="filed">
+                        <div class="grid">
+                            <h4>Le plus souvent, durant combien de temps restez-vous sur votre lieu de vacances ?</h4>
+                            <div class="label">Moins d’une semaine</div>
+                            <input type="radio" id="duree" name="duree" value="0">
+                            <div class="label">1 semaine</div>
+                            <input type="radio" id="duree" name="duree" value="1">
+                            <div class="label">2 semaines</div>
+                            <input type="radio" id="duree" name="duree" value="2">
+                            <div class="label">3 semaines</div>
+                            <input type="radio" id="duree" name="duree" value="3">
+                            <div class="label">Plus de 3 semaines</div>
+                            <input type="radio" id="duree" name="duree" value="4">
+
+                        </div>
+                    </div>
+                    <div class="filed">
+                        <div class="grid">
+                            <h4>Que recherchez-vous, ou rechercheriez-vous, en priorité lors de vos voyages et séjours ?
+                            </h4>
+                            <div class="label">Faire du sport</div>
+                            <input type="radio" id="loisir" name="loisir" value="0">
+                            <div class="label">Me détendre, me reposer</div>
+                            <input type="radio" id="loisir" name="loisir" value="1">
+                            <div class="label">Passer de bons moments entre amis ou en famille</div>
+                            <input type="radio" id="loisir" name="loisir" value="2">
+                            <div class="label">3 semaines</div>
+                            <input type="radio" id="loisir" name="loisir" value="3">
+                            <div class="label">Découvrir la culture et la gastronomie locale</div>
+                            <input type="radio" id="loisir" name="loisir" value="4">
+
+                        </div>
+                    </div>
+                    <div class="filed">
+                        <div class="grid">
+                            <h4>Quel est votre budget pour un voyage?</h4>
+                            <div class="label">Moins d’une semaine</div>
+                            <input type="range" name="slider" id="slider" value="5" min="200" max="2500" step="100"
+                                oninput="num.value = this.value">
+                            <output id="num">0</output>
+                        </div>
+                    </div>
+                    <div class="filed btns">
+                        <button class="prev-1 prev">Précédent</button>
+                        <button class="next-1 next">Suivant</button>
+                    </div>
+                </div>
+
+
+                 <!--   ************
+                        *** PAGE3 ***
+                        *************-->
+
+                        <div class="page">
+                            <div class="title">VOYAGE</div>
+                            <div class="filed">
+                                <div class="grid">
+                                    <h4>Avec qui partez-vous en vacances?</h4>
+                                    <div class="label">Conjoint(e)</div>
+                                    <input type="checkbox" id="accompagnant" name=" conjoint" value="1">
+                                    <div class="label">Enfant(s)</div>
+                                    <input type="checkbox" id="accompagnant" name=" enfant" value="1">
+                                    <div class="label">Amis</div>
+                                    <input type="checkbox" id="accompagnant" name=" amis" value="1">
+                                    <div class="label">Seul(e)</div>
+                                    <input type="checkbox" id="accompagnant" name=" seul" value="1">
+                                    <div class="label">Parents</div>
+                                    <input type="checkbox" id="accompagnant" name=" parents" value="1">
+                                    <div class="label">Collègues de travail</div>
+                                    <input type="checkbox" id="accompagnant" name=" collegues" value="1">        
+                                </div>
+                            </div>
+                            <div class="filed">
+                                <div class="grid">
+                                    <h4>A quelle fréquence utilisez-vous les services en ligne pour prévoir vos voyages ?</h4>
+                                    <div class="label">Jamais</div>
+                                    <input type="radio" id="frequence" name="frequence" value="0">
+                                    <div class="label">occasionnellement</div>
+                                    <input type="radio" id="frequence" name="frequence" value="1">
+                                    <div class="label">c’est une évidence</div>
+                                    <input type="radio" id="frequence" name="frequence" value="2">        
+                                </div>
+                            </div>
+                            <div class="filed">
+                                <div class="grid">
+                                    <h4>Selon vous, quelles doivent être les principales qualités d’un site Internet proposant ce type de
+                                        services ?</h4>
+                                    <div class="label">Visibilité et qualité de l’offre</div>
+                                    <input type="checkbox" id="qualite" name=" qualite" value="1">
+                                    <div class="label">Ergonomie et confort du site</div>
+                                    <input type="checkbox" id="qualite" name=" qualite" value="1">
+                                    <div class="label">Garanties de l'entreprise</div>
+                                    <input type="checkbox" id="qualite" name=" qualite" value="1">
+                                    <div class="label">Confidentialité</div>
+                                    <input type="checkbox" id="qualite" name=" qualite" value="1">
+                                    <div class="label">Sécurité des paiements</div>
+                                    <input type="checkbox" id="qualite" name=" qualite" value="1">        
+                                </div>
+                            </div>
+                            <div class="filed">
+                                <div class="grid">
+                                    <h4>Quelle votre avis sur les compagnies de voyage</h4>
+                                    <span id="etoile" class="fas fa-star" data-star="1"></span>
+                                    <span id="etoile"  class="fas fa-star" data-star="2"></span>
+                                    <span id="etoile" class="fas fa-star" data-star="3"></span>
+                                    <span id="etoile" class="fas fa-star" data-star="4"></span>
+                                    <span id="etoile"  class="fas fa-star" data-star="5"></span>
+                             </div>
+                            </div>
+                            <div class="filed btns">
+                                <button class="prev-2 prev">Précédent</button>
+                                <button class="next-2 next">Suivant</button>
+                            </div>
+                        </div>
+
+                          <!--   ************
+                        *** PAGE4 ***
+                        *************-->
+
+                        <div class="page">
+                            <div class="title">commentaires</div>
+                            <div class="filed">
+                                <legend>Indiquez ci-dessous vos 3 destinations de voyage préférées ou rêvées :</legend>
+                                <div class="grid">
+                                    <textarea name="textarea" id="commentaire_destination" rows="5" cols="30" maxlength="200"
+                                    placeholder="-Italie
+                                    -Grèce
+                                    -Chinne" 
+                                    onkeyup="count_down(this);"
+                                    onblur="vérification_mots(this.id); "></textarea>
+                                <span class="text-muted pull-right" id="count1"></span>
+                                </div>
+                            </div>
+                            <div class="filed">
+                                <legend>Indiquez ci-dessous vos commentaires :</legend>
+                                <textarea name="textarea" id="commentaire" rows="8" cols="70" maxlength="500"
+                                    onkeyup="count_down_2(this);"
+                                    onblur="vérification_mots(this.id);"></textarea>
+                                <span class="text-muted pull-right" id="count2"></span>
+                            </div>
+                            <div class="filed btns">
+                                <button class="prev-3 prev">Précédent</button>
+                                <button class="next-3 next">Suivant</button>
+                            </div>
+                        </div>
+                         <!--   ************
+                        *** PAGE5 ***
+                        *************-->
+
+                        <div class="page">
+                            <div class="title">SCORE</div>
+                            <div class="filed">
+                                <div class="grid">
+                                    <legend> <p id="nomCokkies"></p> 
+                                        <img src="images/fireworks.png" style="position: absolute;height:100px;width: 100px; transform: rotate(-90deg);margin-left: -100px;" alt="">
+                                    <img src="images/fireworks.png" style="position: absolute;height:100px;width: 100px; transform: rotate(90deg);margin-left: 150px;" alt="">
+                                        vous avez un score de : <p id="score"></p>
+                                        </legend>
+                                </div>
+                            </div>
+                            <div class="filed">
+                                <div class="grid-container"style="width:550px;margin-top:50px;margin-left:25px;text-align:center;">
+                                    <div class="grid-item2"style="; background-color: rgb(248, 248, 248); text-align:justify;
+                                            box-shadow: 0px 5px 20px #999;border-radius: 5px;height:150px;">
+                                            <p>Nous vous remercions d'avoir participer à l'enquête de satisfaction mise à votre disposition. </p> 
+                                            <p>Sachez que toute l'attention sera portée à l'étude de vos réponse et suggestion .</p> 
+                                            <p>L’enquête est désormais terminée : nous sommes en train d’en analyser les différents résultats, que nous partagerons avec vous tous prochainement !
+                                            </p>
+                                     </div>
+                                </div>
+                            </div>
+                            <div class="filed btns">
+                                <button class="prev-4 prev">Précédent</button>
+                            </div>
+                        </div>
+
+            </form>
+        </div>
+        
+    </div>
+</body>
+<script src="JS.js"></script>
+</html>
