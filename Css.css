@@ -6,13 +6,204 @@ body{
 
 }
 .container{
-    width: 800px;
+    width: 1200px;
     background-color:bisque;
     border-radius: 5px;
     text-align: center;
     padding: 50px 35px 10px 35px ;
 }
+ .container .form-outer {
+    /* overflow: hidden; */
+    width: 102%;
+    background-color: lightslategray;
+}
 .form-outer form{
     display: flex;
-    width: 1000%;
+    width: 550%;
+}
+.form-outer form .page{
+    width: 50%;
+}
+.form-outer form .page .marge{
+    margin-left: 30px;
+}
+.form-outer form .page .title{
+    text-align: left;
+    font-size: 25px;
+    font-weight: 500;
+}
+.form-outer form .page .filed{
+    height: 45px;
+    width: 600px;
+    margin: 40px 0;
+    display: flex;
+    position: relative;
+}
+.form-outer form .page .filed .label{
+position: absolute;
+top: -25px;
+}
+
+.form-outer form .page .filed input{
+    height: 90%;
+    width: 90%;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    font-size: 18px;
+    padding-left: 5px;
+    margin-left: -20px;
+}
+
+.form-outer form .page .filed select{
+    height: 90%;
+    width: 90%;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    font-size: 12px;
+    padding-left: 20px;
+    margin-left: -20px;
+}
+.form-outer form .page .filed_radio{
+    height: 45px;
+    width: 400px;
+    margin-top: 10px;
+   
+    position: relative;
+}
+.form-outer form .page .filed_radio .label{
+position: absolute;
+
+}
+
+.form-outer form .page .filed_radio h4{
+    width: 500px;
+    text-align: left;
+}
+.form-outer form .page .filed_radio input{
+    height: 40%;
+    width: 40%;
+    padding-left: 5px;
+    margin-left: -20px;
+   
+    
+}
+.form-outer form .page .filed_check{
+    height: 45px;
+    width: 100px; 
+    position: relative;
+}
+.form-outer form .page .filed_check .label{
+position: absolute;
+top: -20px;
+}
+
+
+.form-outer form .page .filed_check input{
+    height: 40%;
+    width: 40%;
+    padding-left: 5px;
+    margin-left: -20px;
+    
+}
+.form-outer form .page .filed_star{
+    height: 45px;
+    width: 50px;
+   
+    position: relative;
+}
+
+
+.form-outer form .page .filed button{
+    width: 50%;
+    height: 100%;
+    margin-top: -20px;
+    border: none;
+    background-color: #d45f8d;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: uppercase;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+}
+.form-outer form .page .filed button:hover{
+    background: #000;
+}
+.form-outer form .page .btns button{
+    margin-top: -20!important;
+}
+form .page .btns button .prev{
+    margin-right: 3px;
+    font-size: 17px;
+}
+form .page .btns button .next{
+    margin-left: 3px;
+    font-size: 17px;
+}
+.container .progress-bar{
+    display: flex;
+    margin: 40px 0;
+}
+.container .progress-bar .step{
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+.progress-bar .step p{
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 8px;
+}
+.progress-bar .step .bulle{
+    position: relative;
+    height: 25px;
+    width: 25px;
+    border: 2px solid #000;
+    display: inline-block;
+    border-radius: 50%;
+}
+.progress-bar .step:last-child .bulle:before,
+.progress-bar .step:last-child .bulle:after{
+    display: none;
+}
+
+.progress-bar .step .bulle:before,
+.progress-bar .step .bulle:after{
+    position: absolute;
+    content:'';
+    margin-left: 50px;
+    margin-top: 10px;
+    height: 5px;
+    width: 200px;
+    background: #262626;
+}
+.progress-bar .step .bulle:after{
+    background: #d45f8d; 
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 0.3s linear forwards;
+}
+@keyframes animate {
+    100%{
+        transform: scaleX(1);
+    }
+}
+.progress-bar .step span{
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.progress-bar .step .check{
+    position: absolute;
+    left: 30%;
+    top:30%;
+    font-size: 15px;
+    transform: translate(-50% -50%);
+    display: none;
 }
