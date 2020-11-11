@@ -61,6 +61,7 @@ img{
 }
 .form-outer form .page .filed .label{
 position: absolute;
+font-size: 18px;
 top: -25px;
 }
 
@@ -79,7 +80,7 @@ top: -25px;
     width: 90%;
     border: 1px solid lightgrey;
     border-radius: 5px;
-    font-size: 12px;
+    font-size: 14px;
     padding-left: 20px;
     margin-left: -20px;
 }
@@ -134,7 +135,7 @@ top: -20px;
 
 
 .form-outer form .page .filed button{
-    width: 50%;
+    width: 40%;
     height: 100%;
     margin-top: -20px;
     border: none;
