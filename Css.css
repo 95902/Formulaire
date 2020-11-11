@@ -25,7 +25,7 @@ body{
     margin-top: 20px;
 }
  .container .form-outer {
-     overflow: hidden; 
+     /* overflow: hidden;  */
     width: 102%;
     
 }
@@ -74,7 +74,7 @@ top: -25px;
     padding-left: 5px;
     margin-left: -20px;
 }
-
+/* SELECT*/
 .form-outer form .page .filed select{
     height: 90%;
     width: 90%;
@@ -84,30 +84,35 @@ top: -25px;
     padding-left: 20px;
     margin-left: -20px;
 }
+/* RADIO*/
 .form-outer form .page .filed_radio{
     height: 45px;
     width: 400px;
     margin-top: 10px;
-   
+    
     position: relative;
 }
 .form-outer form .page .filed_radio .label{
 position: absolute;
+font-size: 16px;
+
 
 }
 
 .form-outer form .page .filed_radio h4{
     width: 500px;
     text-align: left;
+    font-size: 16px;
 }
 .form-outer form .page .filed_radio input{
     height: 40%;
     width: 40%;
     padding-left: 5px;
     margin-left: -20px;
-   
     
+  
 }
+/* CHECK*/
 .form-outer form .page .filed_check{
     height: 45px;
     width: 100px; 
@@ -133,7 +138,7 @@ top: -20px;
     position: relative;
 }
 
-
+/* BUTTON*/
 .form-outer form .page .filed button{
     width: 40%;
     height: 100%;
@@ -163,6 +168,7 @@ form .page .btns button.next{
     margin-left: 3px;
     font-size: 17px;
 }
+/* PROGRESS BAR*/
 .container .progress-bar{
     display: flex;
     margin: 40px 0;
