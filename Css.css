@@ -5,18 +5,37 @@ body{
     min-height: 100vh;
 
 }
+/*header*/
+.container header{
+    width: 1260px;
+    height: 150px;
+    background-color: #bbbbbb2d;
+    margin-top:-50px ;
+    margin-left: -35px;
+    
+  }
+  
 .container{
     width: 1200px;
-    background-color:bisque;
+    background-color: rgb(248, 248, 248);
+    box-shadow: 0px 5px 20px #999;
     border-radius: 5px;
     text-align: center;
-    padding: 50px 35px 10px 35px ;
+    padding: 50px 24px 0px 35px ;
+    margin-top: 20px;
 }
  .container .form-outer {
      overflow: hidden; 
     width: 102%;
-    background-color: lightslategray;
+    
 }
+img{
+ height: 100%;
+
+ padding-right: 30px;
+
+}
+
 .form-outer form{
     display: flex;
     width: 550%;
