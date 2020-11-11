@@ -13,7 +13,7 @@ body{
     padding: 50px 35px 10px 35px ;
 }
  .container .form-outer {
-    /* overflow: hidden; */
+     overflow: hidden; 
     width: 102%;
     background-color: lightslategray;
 }
@@ -22,7 +22,8 @@ body{
     width: 550%;
 }
 .form-outer form .page{
-    width: 50%;
+    width: 25%;
+    transition: margin-left 0.3s ease-in-out;
 }
 .form-outer form .page .marge{
     margin-left: 30px;
@@ -134,11 +135,11 @@ top: -20px;
 .form-outer form .page .btns button{
     margin-top: -20!important;
 }
-form .page .btns button .prev{
+form .page .btns button.prev{
     margin-right: 3px;
     font-size: 17px;
 }
-form .page .btns button .next{
+form .page .btns button.next{
     margin-left: 3px;
     font-size: 17px;
 }
@@ -164,7 +165,14 @@ form .page .btns button .next{
     border: 2px solid #000;
     display: inline-block;
     border-radius: 50%;
+    transition: 0.2s;
+  
 }
+.progress-bar .step .bulle .active{
+ border-color: #d45f8d;
+ background: #d45f8d;
+}
+
 .progress-bar .step:last-child .bulle:before,
 .progress-bar .step:last-child .bulle:after{
     display: none;
@@ -180,7 +188,7 @@ form .page .btns button .next{
     width: 200px;
     background: #262626;
 }
-.progress-bar .step .bulle:after{
+.progress-bar .step .bulle.active:after{
     background: #d45f8d; 
     transform: scaleX(0);
     transform-origin: left;
@@ -199,6 +207,9 @@ form .page .btns button .next{
     left: 50%;
     transform: translateX(-50%);
 }
+.progress-bar .step span .active{
+    display: none;
+} 
 .progress-bar .step .check{
     position: absolute;
     left: 30%;
@@ -206,4 +217,8 @@ form .page .btns button .next{
     font-size: 15px;
     transform: translate(-50% -50%);
     display: none;
+}
+.progress-bar .step .check.active{
+    display: block;
+    color: #fff;
 }

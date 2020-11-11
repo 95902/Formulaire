@@ -1,3 +1,52 @@
+const slidePage =document.querySelector(".sliderpage");
+const premierBtnSuivant =document.querySelector(".nextBtn");
+const btnPrecedentSelc = document.querySelector(".prev-1");
+const btnSuivantSelc = document.querySelector(".next-1");
+const secondBtnPrecedentSelc = document.querySelector(".prev-2");
+const secondBtnSuivantSelc = document.querySelector(".next-2");
+const troisdBtnPrecedentSelc = document.querySelector(".prev-3");
+const troisBtnSuivantSelc = document.querySelector(".next-3");
+const quatreBtnPrecedentSelc = document.querySelector(".prev-4");
+const sumbitBtn = document.querySelector(".submit");
+const progressText = document.querySelectorAll(".step p");
+const progressCheck = document.querySelectorAll(".step .check");
+const bulle = document.querySelectorAll(".step .bulle");
+let max=4;
+let current = 1;
+
+//******************************************
+//*************BOUTON SUIVANT**************
+//******************************************
+premierBtnSuivant.addEventListener("click",function(){
+    slidePage.style.marginLeft = "-25%"
+    bulle[current -1].classList.add("active");
+    current += 1;
+});
+btnSuivantSelc.addEventListener("click",function(){
+    slidePage.style.marginLeft = "-50%"
+});
+secondBtnSuivantSelc.addEventListener("click",function(){
+    slidePage.style.marginLeft = "-75%"
+});
+troisBtnSuivantSelc.addEventListener("click",function(){
+    slidePage.style.marginLeft = "-100%"
+});
+//******************************************
+//*************BOUTON PRECEDENT**************
+//******************************************
+btnPrecedentSelc.addEventListener("click",function(){
+    slidePage.style.marginLeft = "0%"
+});
+secondBtnPrecedentSelc.addEventListener("click",function(){
+    slidePage.style.marginLeft = "-25%"
+});
+troisdBtnPrecedentSelc.addEventListener("click",function(){
+    slidePage.style.marginLeft = "-50%"
+});
+quatreBtnPrecedentSelc.addEventListener("click",function(){
+    slidePage.style.marginLeft = "-75%"
+});
+
 //******************************************
 //*************FUNCTION ETOILE**************
 //******************************************
