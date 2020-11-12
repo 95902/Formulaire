@@ -25,7 +25,7 @@ body{
     margin-top: 20px;
 }
  .container .form-outer {
-     /* overflow: hidden;  */
+     overflow: hidden; 
     width: 102%;
     
 }
@@ -188,7 +188,7 @@ form .page .btns button.next{
     position: relative;
     height: 25px;
     width: 25px;
-    border: 2px solid #000;
+    border: 2px solid#DAA520;
     display: inline-block;
     border-radius: 50%;
     transition: 0.2s;

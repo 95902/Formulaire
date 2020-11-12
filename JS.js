@@ -103,7 +103,7 @@ function verification(nom_controle) {
 
 }
 /*  Validation Page 1
-*/ var cookie_Nom = getCookie("nom");document.getElementById("nomCokkies").innerHTML = 'Bonjour' + ' ' + cookie_Nom ;
+*/ 
 function validationPage1() {
         if(b_civilit== false && b_nom ==false && b_prenom==false && b_email ==false && b_telephone == false && b_statut == false){
             alert("Veuillez compléter tout les champs")
@@ -120,7 +120,7 @@ function validationPage1() {
             slidePage.style.marginLeft = "-25%"
             bulle[current -1].classList.add("active");
             current += 1;
-            setCookie("nom",document.getElementById("nom").value,1);
+           
             
             
         });
@@ -324,8 +324,8 @@ function count_down_2(obj) {
 function validationPage4() {
     if(b_commentaire == false){document.getElementById("commentaire_destination").style.border = '#CC3300 2px solid'; }
         if(b_destination == false){ document.getElementById("commentaire").style.border = '#CC3300 2px solid'; }
-        if(b_destination== false && b_destination ==false && b_qualite==false && b_etoile ==false){
-            alert("Veuillez compléter tout les champs")
+        if(b_destination== false && b_commentaire){
+            alert("Veuillez compléter tout les champs");
             document.getElementById("commentaire").style.border = '#CC3300 2px solid';
             document.getElementById("commentaire_destination").style.border = '#CC3300 2px solid';           
         }  
@@ -343,35 +343,7 @@ function validationPage4() {
 //*************Function Cookies**************
 //******************************************
 
-// Function Cookies
 
-function setCookie(name, value, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+ d.toUTCString();
-    document.cookie = name + "=" + value + ";" + expires + ";path=/";
-  }
-
-function getCookie(name) {
-    var name = name + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
-  }
-console.log(document.getElementById("nom").value);
-var cookie_Nom = getCookie("nom");
-
-
-setCookie("Prénom",document.getElementById("prenom").value,1)
 
 //******************************************
 //*************FUNCTION ETOILE**************
