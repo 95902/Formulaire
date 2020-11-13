@@ -21,11 +21,11 @@ body{
     box-shadow: 0px 5px 20px #999;
     border-radius: 5px;
     text-align: center;
-    padding: 50px 24px 0px 35px ;
+    padding: 30px 24px 0px 35px ;
     margin-top: 20px;
 }
  .container .form-outer {
-     overflow: hidden; 
+     /* overflow: hidden;  */
     width: 102%;
     
 }
@@ -194,9 +194,13 @@ form .page .btns button.next{
     transition: 0.2s;
   
 }
-.progress-bar .step .bulle .active{
- border-color: #d45f8d;
- background: #d45f8d;
+
+
+.progress-bar .step .bulle.active{
+   
+    border: 2px solid#DAA520;
+    
+  
 }
 
 .progress-bar .step:last-child .bulle:before,
@@ -208,14 +212,15 @@ form .page .btns button.next{
 .progress-bar .step .bulle:after{
     position: absolute;
     content:'';
-    margin-left: 50px;
+    margin-left: 30px;
     margin-top: 10px;
     height: 5px;
     width: 200px;
-    background: #262626;
+    background: #8a8989;
 }
 .progress-bar .step .bulle.active:after{
-    background: #d45f8d; 
+    background: #0275c6; 
+    
     transform: scaleX(0);
     transform-origin: left;
     animation: animate 0.3s linear forwards;
@@ -225,26 +230,35 @@ form .page .btns button.next{
         transform: scaleX(1);
     }
 }
-.progress-bar .step span{
+.progress-bar .step .bulle span{
     font-weight: 500;
     font-size: 17px;
     line-height: 25px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    
 }
-.progress-bar .step span .active{
+.progress-bar .step .bulle.active span{
     display: none;
 } 
-.progress-bar .step .check{
+.progress-bar .step .check {
     position: absolute;
-    left: 30%;
-    top:30%;
+    left: 22%;
+    top:17%;
     font-size: 15px;
     transform: translate(-50% -50%);
     display: none;
+    height: 15px;
+    width: 15px;
+    background-color:#2042da;
+    
+    border-radius: 50%;
 }
-.progress-bar .step .check.active{
+.progress-bar .step .check.active
+{
     display: block;
-    color: #fff;
+    background-color:#2042da;
 }
+
+

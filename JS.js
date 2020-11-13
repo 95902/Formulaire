@@ -119,6 +119,7 @@ function validationPage1() {
         premierBtnSuivant.addEventListener("click",function(){
             slidePage.style.marginLeft = "-25%"
             bulle[current -1].classList.add("active");
+            progressCheck[current -1].classList.add("active"); 
             current += 1;
            
             
@@ -178,6 +179,9 @@ function validationPage2() {
     if(b_duree == true && b_loisir==true && b_budget==true){
         btnSuivantSelc.addEventListener("click",function(){
             slidePage.style.marginLeft = "-50%"
+            bulle[current -1].classList.add("active");
+            progressCheck[current -1].classList.add("active"); 
+            current += 1;
         });
     }
 }
@@ -240,7 +244,10 @@ function validationPage3() {
         }  
     if(b_accompagnant == true && b_frequence==true && b_qualite==true && b_etoile ==true){
         secondBtnSuivantSelc.addEventListener("click",function(){
-            slidePage.style.marginLeft = "-75%"
+            slidePage.style.marginLeft = "-75%";
+            bulle[current -1].classList.add("active");
+            progressCheck[current -1].classList.add("active"); 
+            current += 1;
         });
         
     }
@@ -332,10 +339,25 @@ function validationPage4() {
     if(b_commentaire == true && b_destination==true ){       
         troisBtnSuivantSelc.addEventListener("click",function(){
             slidePage.style.marginLeft = "-100%"
+            bulle[current -1].classList.add("active");
+            progressCheck[current -1].classList.add("active"); 
+            current += 1;
         });
     }
 }
-
+/*  Validation Page 4
+*/
+function validationPage5() {
+    sumbitBtn.addEventListener("click", function () {
+        bulle[current -1].classList.add("active");
+        progressCheck[current -1].classList.add("active"); 
+        current += 1;
+        setTimeout(function () {
+            alert("Merci");
+        }, 800);
+    });
+    
+}
 
 
 
