@@ -11,22 +11,39 @@ const sumbitBtn = document.querySelector(".submit");
 const progressText = document.querySelectorAll(".step p");
 const progressCheck = document.querySelectorAll(".step .check");
 const bulle = document.querySelectorAll(".step .bulle");
-let max=4;
-let current = 1;
+let max=3;
+let current = 0;
+
 //******************************************
 //*************BOUTON PRECEDENT**************
 //******************************************
-btnPrecedentSelc.addEventListener("click",function(){
+btnPrecedentSelc.addEventListener("click", function () {
     slidePage.style.marginLeft = "0%"
+    bulle[current - 2].classList.remove("active");
+    progressCheck[current - 2].classList.remove("active");
+    current -= 1;
+
 });
-secondBtnPrecedentSelc.addEventListener("click",function(){
+secondBtnPrecedentSelc.addEventListener("click", function () {
     slidePage.style.marginLeft = "-25%"
+    bulle[current - 2].classList.remove("active");
+    progressCheck[current - 2].classList.remove("active");
+    current -= 1;
+
 });
-troisdBtnPrecedentSelc.addEventListener("click",function(){
+troisdBtnPrecedentSelc.addEventListener("click", function () {
     slidePage.style.marginLeft = "-50%"
+    bulle[current - 2].classList.remove("active");
+    progressCheck[current - 2].classList.remove("active");
+    current -= 1;
+
 });
-quatreBtnPrecedentSelc.addEventListener("click",function(){
+quatreBtnPrecedentSelc.addEventListener("click", function () {
     slidePage.style.marginLeft = "-75%"
+    bulle[current - 2].classList.remove("active");
+    progressCheck[current - 2].classList.remove("active");
+    current -= 1;
+
 });
 
 //******************************************
@@ -121,9 +138,7 @@ function validationPage1() {
             bulle[current -1].classList.add("active");
             progressCheck[current -1].classList.add("active"); 
             current += 1;
-           
-            
-            
+            console.log(current);
         });
     }
 }
@@ -252,9 +267,7 @@ function validationPage3() {
         
     }
 }
-//******************************************
-//***FUNCTION VALIDATION FORM Page 4 ******
-//******************************************
+
 //******************************************
 //***FUNCTION VALIDATION FORM Page 4*******
 //******************************************
@@ -354,18 +367,26 @@ function validationPage5() {
         current += 1;
         setTimeout(function () {
             alert("Merci");
+            location.reload();
         }, 800);
     });
     
 }
 
 
+//**
+//*Function Cookies**
+//**
+function setCookies(){
 
-//******************************************
-//*************Function Cookies**************
-//******************************************
-
-
+    cookie_nom = escape(document.form.nom.value);
+    cookie_prenom = escape(document.form.prenom.value);
+    document.cookie="name=" + cookie_nom+ " " +cookie_prenom+"; path=/";
+    document.getElementById("cookies").innerHTML = 'Bonjour' + ' ' + cookie_nom+ " "+cookie_prenom;
+    document.getElementById("cookies2").innerHTML = 'Bonjour' + ' ' + cookie_nom+ " "+cookie_prenom;
+    document.getElementById("cookies3").innerHTML = 'Bonjour' + ' ' + cookie_nom+ " "+cookie_prenom;
+    document.getElementById("cookies4").innerHTML = 'Bonjour' + ' ' + cookie_nom+ " "+cookie_prenom;
+}
 
 //******************************************
 //*************FUNCTION ETOILE**************

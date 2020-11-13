@@ -16,39 +16,27 @@
             <img src="images/logo.png" alt="" style="float: left;margin-top:-90px ;height: 200px;width: 200px;">
             <div class="progress-bar">
                 <div class="step">
-                    <p>Resa</p>
                     <div class="bulle">
                         <span >1</span>
-                        <div class="check">
-
-                        </div>
+                        <div class="check"></div>
                     </div>
                 </div>
                 <div class="step">
-                    <p>emba</p>
                     <div class="bulle">
                         <span>2</span>
-                        <div class="check">
-
-                        </div>
+                        <div class="check"></div>
                     </div>
                 </div>
                 <div class="step">
-                    <p>vol</p>
                     <div class="bulle">
                         <span>3</span>
-                        <div class="check">
-
-                        </div>
+                        <div class="check"></div>
                     </div>
                 </div>
                 <div class="step">
-                    <p>Naatt</p>
                     <div class="bulle">
                         <span>4</span>
-                        <div class="check">
-
-                        </div>
+                        <div class="check"></div>
                     </div>
                 </div>
             </div>
@@ -101,7 +89,7 @@
                             </select>
                         </div>
                         <div class="filed nextBtn">
-                            <button onclick="validationPage1()">Suivant</button>
+                            <button onclick="validationPage1(),setCookies()">Suivant</button>
                         </div>
 
                     </div>
@@ -117,7 +105,7 @@
 
                 <div class="page" style="display: flex;">
                     <div class="marge">
-                        <div class="title" id="nomCokkies"></div>
+                        <div class="title" id="cookies"></div>
                         <div class="filed_radio">
                             <h4 id="question1" style="margin-top: 40px;">Durant combien de temps restez-vous sur votre
                                 lieu de vacances ?</h4>
@@ -166,7 +154,7 @@
                         </div>
                         <div class="filed btns">
                             <button class="prev-1 prev">Précédent</button>
-                            <button class="next-1 next" onclick="validationPage2()">Suivant</button>
+                            <button class="next-1 next" onclick="validationPage2(),setCookies()">Suivant</button>
                         </div>
                     </div>
                     <div class="img">
@@ -183,7 +171,7 @@
                 <div class="page" style="display: flex;">
 
                     <div class="marge">
-                        <div class="title" id="nomCokkies"></div>
+                        <div class="title" id="cookies2"></div>
                         <div class="filed_radio">
                             <h4 id="question4">Avec qui partez-vous en vacances?</h4>
                         </div>
@@ -293,7 +281,7 @@
                         </div>
                         <div class="filed btns">
                             <button class="prev-2 prev">Précédent</button>
-                            <button class="next-2 next" onclick="validationPage3()">Suivant</button>
+                            <button class="next-2 next" onclick="validationPage3(),setCookies()">Suivant</button>
                         </div>
                     </div>
                     <div class="img">
@@ -309,7 +297,7 @@
                 <div class="page" style="display: flex;">
 
                     <div class="marge">
-                        <div class="title" id="nomCokkies"></div>
+                        <div class="title" id="cookies3"></div>
                         <div class="filed_radio" style="margin-top: 70px;">
                             <h4>Indiquez ci-dessous vos 3 destinations de voyage préférées ou rêvées :</h4>
                         </div>
@@ -331,7 +319,7 @@
                         </div>
                         <div class="filed btns">
                             <button class="prev-3 prev">Précédent</button>
-                            <button class="next-3 next" onclick="validationPage4();">Suivant</button>
+                            <button class="next-3 next" onclick="validationPage4(),setCookies()">Suivant</button>
                         </div>
                     </div>
                     <div class="img">
@@ -348,7 +336,7 @@
                         <div class="title">SCORE</div>
                         <div class="filed_radio">
                             <legend>
-                                <p id="nomCokkies"></p>
+                                <p id="cookies4"></p>
                                 <img src="images/fireworks.png"
                                     style="position: absolute;height:100px;width: 100px; transform: rotate(-90deg);margin-left: -100px;"
                                     alt="">
