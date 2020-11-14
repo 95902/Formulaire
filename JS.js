@@ -233,8 +233,9 @@ function verification_page_3(nom_controle) {
                 }
                
                 //validation etoile// 
-                else if (nom_controle =="rating-input" ) {
-                    if(document.getElementById("rating-input").value>0){
+                else if (nom_controle =="rating-1"||nom_controle =="rating-2"||nom_controle =="rating-3"||nom_controle =="rating-4"
+                ||nom_controle =="rating-5") {
+                    if(document.getElementById("rating-1").dataset.rating ==1 ){
                         b_etoile = true;
                         document.getElementById('question7').style.color = '#000000';
                     }
@@ -243,8 +244,8 @@ function verification_page_3(nom_controle) {
                     }
                      console.log(b_etoile);
                      
-                     etoile= document.getElementById("rating-input").dataset.rating;
-        console.log(etoile);
+                     console.log(document.getElementById("rating-1").dataset.rating);
+                console.log(document.getElementById("rating-1").rating);
                 }
 }
 /*  Validation Page 3
