@@ -10,14 +10,14 @@
 </head>
 
 <body>
-    <div class="container" >
+    <div class="container">
         <header>
             <h2>Enquête de satisfaction </h2>
             <img src="images/logo.png" alt="" style="float: left;margin-top:-90px ;height: 200px;width: 200px;">
             <div class="progress-bar">
                 <div class="step">
                     <div class="bulle">
-                        <span >1</span>
+                        <span>1</span>
                         <div class="check"></div>
                     </div>
                 </div>
@@ -42,91 +42,156 @@
             </div>
         </header>
         <div class="form-outer">
-           
 
-                <!--   ************
+
+            <!--   ************
                         *** PAGE5 ***
                         *************-->
 
-                <div class="page" style="display: flex;">
-                    <div class="marge">
-                        <div class="title">SCORE</div>
-                        <div class="filed_radio">
-                            <legend>
-                                <p id="cookies4"></p>
-                                <img src="images/fireworks.png"
-                                    style="position: absolute;height:100px;width: 100px; transform: rotate(-90deg);margin-left: -100px;"
-                                    alt="">
-                                <img src="images/fireworks.png"
-                                    style="position: absolute;height:100px;width: 100px; transform: rotate(90deg);margin-left: 150px;"
-                                    alt="">
-                                vous avez un score de : <p id="score"></p>
-                            </legend>
-                        </div>
-                        <div class="filed">
-
-                        </div>
-                        <div class="filed_radio">
-                           
-                        </div>
-
-                        <div class="filed btns" style="margin-top: 300px;">
-                            <button class="prev-4 prev">Précédent</button>
-                            <button class="submit" onclick="validationPage5()">Envoyer</button>
-                        </div>
+            <div class="page" style="display: flex;">
+                <div class="marge">
+                    <div class="title">SCORE</div>
+                    <div class="filed_radio">
+                        <legend>
+                            <p id="cookies4"></p>
+                            <img src="images/fireworks.png"
+                                style="position: absolute;height:100px;width: 100px; transform: rotate(-90deg);margin-left: -100px;"
+                                alt="">
+                            <img src="images/fireworks.png"
+                                style="position: absolute;height:100px;width: 100px; transform: rotate(90deg);margin-left: 150px;"
+                                alt="">
+                            vous avez un score de : <p id="score"></p>
+                        </legend>
                     </div>
-                    <div class="img">
-                        
+                    <div class="filed">
+
+                    </div>
+                    <div class="filed_radio">
+
+                    </div>
+
+                    <div class="filed btns" style="margin-top: 300px;">
+                        <button class="prev-4 prev">Précédent</button>
+                        <button class="submit" onclick="validationPage5()">Envoyer</button>
                     </div>
                 </div>
+                <div class="img">
 
-           
+                </div>
+            </div>
+
+
         </div>
 
     </div>
     <script>
-    // Récupérer les valeurs dans l'URL passée par la méthode GET du formulaire
-// en créant une instance de l'objet URLSearchParams
-let urlParams = new URLSearchParams(window.location.search);
-// window.location.search aura pour valeur par exemple : ?nom=Joe&ville=Toronto
-let leNom;
-let Prenom;
-/* 
-    Récupérer les données passées en paramètres dans l'URL
-    en utilisant l'objet urlParams instancié à partir de URLSearchParams
-*/
-
-if (urlParams.has('nom')) {leNom = urlParams.get('nom');}
-if (urlParams.has('prenom')) {Prenom = urlParams.get('prenom');}
-if (urlParams.has('duree')) {duree = urlParams.get('duree');}
-if (urlParams.has('loisir')) {loisir = urlParams.get('loisir');}
-if (urlParams.has('slider')) {slider = urlParams.get('slider');}
-if (urlParams.has('conjoint')) {conjoint = urlParams.get('conjoint');}
-if (urlParams.has('enfant')) {enfant = urlParams.get('enfant');}
-if (urlParams.has('amis')) {amis = urlParams.get('amis');}
-if (urlParams.has('seul')) {seul = urlParams.get('seul');}
-if (urlParams.has('collegues')) {collegues = urlParams.get('collegues');}
-if (urlParams.has('frequence')) {frequence = urlParams.get('frequence');}
-if (urlParams.has('Visibilite')) {Visibilite = urlParams.get('Visibilite');}
-if (urlParams.has('Ergonomie')) {Ergonomie = urlParams.get('Ergonomie');}
-if (urlParams.has('Confidentialite')) {Confidentialite = urlParams.get('Confidentialite');}
-if (urlParams.has('Garanties')) {Garanties = urlParams.get('Garanties');}
-if (urlParams.has('Securite')) {Securite = urlParams.get('Securite');}
-if (urlParams.has('enfant')) {enfant = urlParams.get('enfant');}
-if (urlParams.has('enfant')) {enfant = urlParams.get('enfant');}
-if (urlParams.has('enfant')) {enfant = urlParams.get('enfant');}
-if (urlParams.has('enfant')) {enfant = urlParams.get('enfant');}
+function Decode(tChaine) {
+        while (true) {
+            var i = tChaine.indexOf("+");
+            if (i < 0) break;
+            tChaine = tChaine.substring(0,i) + "%20" + tChaine.substring(i + 1, tChaine.length);
+        }
+        return unescape(tChaine)
+        }
+        //******************************************
+        //***RECUPERATION DONNEES 3 ******
+        //******************************************
+        // Récupérer les valeurs dans l'URL passée par la méthode GET du formulaire en créant une instance de l'objet URLSearchParams
+        
 
 
+        let urlParams =new URLSearchParams(window.location.search);
+
+        // Décoder la requête HTTP
+        // manuellement pour le signe (+)
+        
+
+    
+      ////////////
+        let leNom;
+        let Prenom;
+        let duree;
+        let loisir;
+        let slider;
+        let conjoint;
+        let enfant;
+        let amis;
+        let seul;
+        let collegues;
+        let frequence;
+        let Visibilite;
+        let Ergonomie;
+        let Confidentialite;
+        let Garanties;
+        let Securite;
+        let textarea1;
+        let textarea2;
+        let rating;
+      //////////////
+        /* 
+            Récupérer les données passées en paramètres dans l'URL
+        */
+        if (urlParams.has('nom')) { leNom = urlParams.get('nom'); }
+        if (urlParams.has('prenom')) { Prenom = urlParams.get('prenom'); }
+        if (urlParams.has('duree')) { duree = urlParams.get('duree'); }
+        if (urlParams.has('loisir')) { loisir = urlParams.get('loisir'); }
+        if (urlParams.has('slider')) { slider = urlParams.get('slider'); }
+        if (urlParams.has('conjoint') ? conjoint = urlParams.get('conjoint'):conjoint = 0 );
+        if (urlParams.has('enfant')  ? enfant = urlParams.get('enfant'):enfant=0 );
+        if (urlParams.has(' amis')  ? amis = urlParams.get(' amis'):amis=0);
+        if (urlParams.has('seul') ? seul = urlParams.get('seul') : seul =0);
+        if (urlParams.has('collegues') ? collegues = urlParams.get('collegues'):collegues=0);
+        if (urlParams.has('frequence')) { frequence = urlParams.get('frequence'); }
+        if (urlParams.has(' Visibilite') ? Visibilite = urlParams.get(' Visibilite'):Visibilite=0);
+        if (urlParams.has('Ergonomie') ? Ergonomie = urlParams.get('Ergonomie'):Ergonomie=0);
+        if (urlParams.has('Confidentialite') ? Confidentialite = urlParams.get('Confidentialite'):Confidentialite=0);
+        if (urlParams.has('Garanties')? Garanties = urlParams.get('Garanties'):Garanties=0);
+        if (urlParams.has('Securite') ? Securite = urlParams.get('Securite'):Securite=0);
+        if (urlParams.has('textarea1')) { textarea1 = urlParams.get('textarea1'); }
+        if (urlParams.has('textarea2')) { textarea2 = urlParams.get('textarea2'); }
+        if (urlParams.has('rating')) { rating = urlParams.get('rating'); }
+
+        
+         //////////////
+        /* 
+           AFFICHAGE INFORMATION 
+        */
+
+        ///SCORE///
+        slider =slider/100
+        /*  point textarea1*/
+        point=0;
+        if (textarea1.includes("France")||textarea1.includes("Chine")||textarea1.includes("Italie")) {
+            point += 2;
+        }
+        if (textarea1.includes("Maroc")||textarea1.includes("Espagne")||textarea1.includes("Angleterre")) {
+            point += 1;
+        }
+        /*  point textarea2*/
+        if (textarea2.length <10) {
+            point += 1;
+        }
+        if (textarea2.length >100 ) {
+            point += 3;
+        }
+        if (textarea2.length==200) {
+            point += 5;
+        }
 
 
+        /*  conversion du tableau en int  */
+        var tablescore=[duree,loisir,conjoint,enfant,amis,seul,collegues,frequence,Visibilite,Ergonomie,Confidentialite,Garanties,Securite,rating]
+        const table = tablescore.map((i) => Number(i));
+        /*  calcule score*/    
+        var score = table[0]+table[1]+slider+table[2]+table[3]+table[4]+
+        table[5]+table[6]+table[7]+table[8]+table[9]+table[10]+table[11]+
+        table[12]+table[13]+point
 
-
-console.log(window.location.search);
-console.log(Prenom)
-document.getElementById("cookies4").innerHTML ='Bien joué'+" "+leNom
-
-
+        document.getElementById("cookies4").innerHTML = 'Bien joué' + " " + leNom
+        document.getElementById("score").innerHTML = score
+        console.log(score)
+        console.log(window.location.search)
+        console.log(score)
     </script>
     <script src="JS.js"></script>
 </body>

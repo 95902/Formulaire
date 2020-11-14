@@ -322,14 +322,6 @@ function count_down(obj) {
 function count_down_2(obj) {
     var element = document.getElementById('count2');
     element.innerHTML = 200 - obj.value.length;
-    if (50 - obj.value.length <= 0) {
-        point = 1;
-        b_commentaire = true;
-    }
-    if (100 - obj.value.length <= 0) {
-        point = 3;
-        b_commentaire = true;
-    }
     if (200 - obj.value.length <= 0) {
         point = 5;
         b_commentaire = true;
