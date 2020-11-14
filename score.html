@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Css.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
     <title>Enquête de satisfaction </title>
 </head>
 
@@ -75,8 +76,8 @@
                         <button class="submit" onclick="validationPage5()">Envoyer</button>
                     </div>
                 </div>
-                <div class="img">
-
+                <div class="img" style="height:500px;width:800px;margin-left:50px">
+                    <canvas id="myChart"></canvas>
                 </div>
             </div>
 
@@ -192,6 +193,28 @@ function Decode(tChaine) {
         console.log(score)
         console.log(window.location.search)
         console.log(score)
+
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+     // The type of chart we want to create
+     type: 'pie',
+ 
+     // The data for our dataset
+     data: {
+         labels: ['duree', 'loisir', 'accompagnant','frequence','qualite','budget'],
+         datasets: [{
+             label: 'My First dataset',
+             backgroundColor: ['rgb(255, 99, 132)','rgb(54,162,235)','rgb(255,205,86)','rgb(255,87,51)','rgb(214,137,16)','rgb(17,122,101)','rgb(238,28,28)'],
+             borderColor: 'rgb(248,248,255)',
+             data: [ duree ,  loisir,table[2]+table[3]+table[4]+ table[5]+table[6],frequence,table[9]+table[10]+table[11]+table[12],slider
+            ]
+         }]
+     },
+ 
+     // Configuration options go here
+     options: {}
+ });
     </script>
     <script src="JS.js"></script>
 </body>
