@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Css.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
     <title>Enquête de satisfaction </title>
 </head>
 
@@ -42,7 +44,7 @@
             </div>
         </header>
         <div class="form-outer">
-            <form action="#" name="form">
+            <form action="score.html" name="form"method="GET" >
 
                 <!--   *************
                     *** PAGE1 ***
@@ -230,27 +232,27 @@
                         <div style="display: flex;margin-top: 20px;">
                             <div class="filed_check">
                                 <div class="label">Visibilité </div>
-                                <input type="checkbox" id="qualite" name=" qualite" value="1"
+                                <input type="checkbox" id="qualite" name=" Visibilite" value="1"
                                     onclick="verification_page_3(this.id)">
                             </div>
                             <div class="filed_check">
                                 <div class="label">Ergonomie </div>
-                                <input type="checkbox" id="qualite" name=" qualite" value="1"
+                                <input type="checkbox" id="qualite" name=" Ergonomie" value="1"
                                     onclick="verification_page_3(this.id)">
                             </div>
                             <div class="filed_check">
-                                <div class="label">Garanties </div>
-                                <input type="checkbox" id="qualite" name=" qualite" value="1"
+                                <div class="label">Ergonomie </div>
+                                <input type="checkbox" id="qualite" name=" Garanties" value="1"
                                     onclick="verification_page_3(this.id)">
                             </div>
                             <div class="filed_check">
                                 <div class="label">Confidentialité</div>
-                                <input type="checkbox" id="qualite" name=" qualite" value="1"
+                                <input type="checkbox" id="qualite" name=" Confidentialite" value="1"
                                     onclick="verification_page_3(this.id)">
                             </div>
                             <div class="filed_check">
                                 <div class="label">Sécurité </div>
-                                <input type="checkbox" id="qualite" name=" qualite" value="1"
+                                <input type="checkbox" id="qualite" name=" Securite" value="1"
                                     onclick="verification_page_3(this.id)">
                             </div>
                         </div>
@@ -258,26 +260,15 @@
                             <h4 id="question7">Quelle votre avis sur les compagnies de voyage</h4>
                         </div>
                         <div style="display: flex;">
-                            <div class="filed_star">
-                                <span id="etoile" class="fas fa-star" data-star="1"
-                                    onclick="verification_page_3(this.id)" value="1"></span></span>
-                            </div>
-                            <div class="filed_star">
-                                <span id="etoile" class="fas fa-star" data-star="2"
-                                    onclick="verification_page_3(this.id)" value="2"></span></span>
-                            </div>
-                            <div class="filed_star">
-                                <span id="etoile" class="fas fa-star" data-star="3"
-                                    onclick="verification_page_3(this.id)" value="3"></span></span>
-                            </div>
-                            <div class="filed_star">
-                                <span id="etoile" class="fas fa-star" data-star="4"
-                                    onclick="verification_page_3(this.id)" value="4"></span></span>
-                            </div>
-                            <div class="filed_star">
-                                <span id="etoile" class="fas fa-star" data-star="5"
-                                    onclick="verification_page_3(this.id)" value="5"></span></span>
-                            </div>
+                            <input type="number" name="rating" id="rating-input" min="1" max="5" oninput="verification_page_3(this.id)"/>
+                              <div class="rating" role="optgroup">
+                                <!-- in Rails just use 1.upto(5) -->  
+                                <i class="fa fa-star-o fa-2x rating-star" id="rating-1" data-rating="1" tabindex="0" aria-label="Rate as one out of 5 stars" role="radio"></i>
+                                <i class="fa fa-star-o fa-2x rating-star" id="rating-2" data-rating="2" tabindex="0" aria-label="Rate as two out of 5 stars" role="radio"></i>
+                                <i class="fa fa-star-o fa-2x rating-star" id="rating-3" data-rating="3" tabindex="0" aria-label="Rate as three out of 5 stars" role="radio"></i>
+                                <i class="fa fa-star-o fa-2x rating-star" id="rating-4" data-rating="4" tabindex="0" aria-label="Rate as four out of 5 stars" role="radio"></i>
+                                <i class="fa fa-star-o fa-2x rating-star" id="rating-5" data-rating="5" tabindex="0" aria-label="Rate as five out of 5 stars" role="radio"></i>
+                              </div>
                         </div>
                         <div class="filed btns">
                             <button class="prev-2 prev">Précédent</button>
@@ -319,48 +310,7 @@
                         </div>
                         <div class="filed btns">
                             <button class="prev-3 prev">Précédent</button>
-                            <button class="next-3 next" onclick="validationPage4(),setCookies()">Suivant</button>
-                        </div>
-                    </div>
-                    <div class="img">
-                        <img src="images/imagePage1.jpg"
-                            style="width: 650px;margin-left:-50px;border-bottom-right-radius: 40px ;" alt="">
-                    </div>
-                </div>
-                <!--   ************
-                        *** PAGE5 ***
-                        *************-->
-
-                <div class="page" style="display: flex;">
-                    <div class="marge">
-                        <div class="title">SCORE</div>
-                        <div class="filed_radio">
-                            <legend>
-                                <p id="cookies4"></p>
-                                <img src="images/fireworks.png"
-                                    style="position: absolute;height:100px;width: 100px; transform: rotate(-90deg);margin-left: -100px;"
-                                    alt="">
-                                <img src="images/fireworks.png"
-                                    style="position: absolute;height:100px;width: 100px; transform: rotate(90deg);margin-left: 150px;"
-                                    alt="">
-                                vous avez un score de : <p id="score"></p>
-                            </legend>
-                        </div>
-                        <div class="filed">
-
-                        </div>
-                        <div class="filed_radio">
-                            <p>Nous vous remercions d'avoir participer à l'enquête de satisfaction mise à votre
-                                disposition. </p>
-                            <p>Sachez que toute l'attention sera portée à l'étude de vos réponse et suggestion .</p>
-                            <p>L’enquête est désormais terminée : nous sommes en train d’en analyser les différents
-                                résultats, que nous partagerons avec vous tous prochainement !
-                            </p>
-                        </div>
-
-                        <div class="filed btns" style="margin-top: 300px;">
-                            <button class="prev-4 prev">Précédent</button>
-                            <button class="submit " onclick="validationPage5()">Envoyer</button>
+                            <button class="submit " onclick="validationPage4()">Envoyer</button>
                         </div>
                     </div>
                     <div class="img">
@@ -373,9 +323,9 @@
         </div>
 
     </div>
-    
     <script>
-        setCookie("nom",document.getElementById("nom").value,1)
+     etoile= document.getElementById("rating-input").dataset.rating;
+        console.log(etoile);
     </script>
     <script src="JS.js"></script>
 </body>

@@ -5,14 +5,14 @@ const btnSuivantSelc = document.querySelector(".next-1");
 const secondBtnPrecedentSelc = document.querySelector(".prev-2");
 const secondBtnSuivantSelc = document.querySelector(".next-2");
 const troisdBtnPrecedentSelc = document.querySelector(".prev-3");
-const troisBtnSuivantSelc = document.querySelector(".next-3");
+
 const quatreBtnPrecedentSelc = document.querySelector(".prev-4");
 const sumbitBtn = document.querySelector(".submit");
 const progressText = document.querySelectorAll(".step p");
 const progressCheck = document.querySelectorAll(".step .check");
 const bulle = document.querySelectorAll(".step .bulle");
-let max=3;
-let current = 0;
+let max=4;
+let current = 1;
 
 //******************************************
 //*************BOUTON PRECEDENT**************
@@ -38,13 +38,7 @@ troisdBtnPrecedentSelc.addEventListener("click", function () {
     current -= 1;
 
 });
-quatreBtnPrecedentSelc.addEventListener("click", function () {
-    slidePage.style.marginLeft = "-75%"
-    bulle[current - 2].classList.remove("active");
-    progressCheck[current - 2].classList.remove("active");
-    current -= 1;
 
-});
 
 //******************************************
 //***FUNCTION VALIDATION FORM Page 1 ******
@@ -237,14 +231,20 @@ function verification_page_3(nom_controle) {
                     }
                     console.log(b_qualite);
                 }
+               
                 //validation etoile// 
-                else if (nom_controle == "etoile") {
-                    if(document.getElementById("etoile").dataset.star==1){
+                else if (nom_controle =="rating-input" ) {
+                    if(document.getElementById("rating-input").value>0){
                         b_etoile = true;
                         document.getElementById('question7').style.color = '#000000';
                     }
+                    else{
+                        b_etoile = false;
+                    }
                      console.log(b_etoile);
-                     console.log(document.getElementById("etoile").dataset.star)
+                     
+                     etoile= document.getElementById("rating-input").dataset.rating;
+        console.log(etoile);
                 }
 }
 /*  Validation Page 3
@@ -257,7 +257,7 @@ function validationPage3() {
         if(b_accompagnant== false && b_frequence ==false && b_qualite==false && b_etoile ==false){
             alert("Veuillez compléter tout les champs")           
         }  
-    if(b_accompagnant == true && b_frequence==true && b_qualite==true && b_etoile ==true){
+    if(b_accompagnant == true && b_frequence==true && b_qualite==true ){
         secondBtnSuivantSelc.addEventListener("click",function(){
             slidePage.style.marginLeft = "-75%";
             bulle[current -1].classList.add("active");
@@ -350,33 +350,52 @@ function validationPage4() {
             document.getElementById("commentaire_destination").style.border = '#CC3300 2px solid';           
         }  
     if(b_commentaire == true && b_destination==true ){       
-        troisBtnSuivantSelc.addEventListener("click",function(){
-            slidePage.style.marginLeft = "-100%"
+        sumbitBtn.addEventListener("click", function () {
             bulle[current -1].classList.add("active");
             progressCheck[current -1].classList.add("active"); 
             current += 1;
+            document.forms["form"].submit()
         });
     }
 }
-/*  Validation Page 4
+/*  Validation Page 5
 */
 function validationPage5() {
-    sumbitBtn.addEventListener("click", function () {
-        bulle[current -1].classList.add("active");
-        progressCheck[current -1].classList.add("active"); 
-        current += 1;
-        setTimeout(function () {
-            alert("Merci");
-            location.reload();
-        }, 800);
-    });
+    setTimeout(function () {
+        alert("Merci");
+        location.reload();
+    }, 800)
     
 }
 
 
-//**
-//*Function Cookies**
-//**
+
+//******************************************
+//*************FUNCTION COOKIES**************
+
+//******************************************
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
 function setCookies(){
 
     cookie_nom = escape(document.form.nom.value);
@@ -386,62 +405,72 @@ function setCookies(){
     document.getElementById("cookies2").innerHTML = 'Bonjour' + ' ' + cookie_nom+ " "+cookie_prenom;
     document.getElementById("cookies3").innerHTML = 'Bonjour' + ' ' + cookie_nom+ " "+cookie_prenom;
     document.getElementById("cookies4").innerHTML = 'Bonjour' + ' ' + cookie_nom+ " "+cookie_prenom;
-}
+    
+    duree=document.querySelector('input[id=duree]:checked').value;
+    setCookie("duree", duree, 1);
+    loisir=document.querySelector('input[id=loisir]:checked').value;
+    setCookie("loisir", loisir,1);
+    setCookie("slider", (document.getElementById("slider").value/10),1);
+    accompagnant+=document.querySelector('input[id=accompagnant]:checked').value;
+    setCookie("accompagnant", accompagnant);
+    frequence=document.querySelector('input[id=frequence]:checked').value;
+    setCookie("frequence", frequence);
+    etoile=document.querySelector('span[id=etoile]:checked').dataset.star;
+    setCookie("etoile", etoile);
+    qualite=document.querySelector('input[id=qualite]:checked').value;
+    setCookie("qualite", qualite);
 
+}
+function Score(){
+
+    var  dure=  parseInt(Cookies.get("duree"));
+    var  periode= parseInt(Cookies.get("periode"));
+    var loisir= parseInt(Cookies.get("loisir"));
+    var  slider= parseInt(Cookies.get("slider"));
+    var  accompagnant= parseInt(Cookies.get("accompagnant"));
+    var  frequence= parseInt(Cookies.get("frequence"));
+    var  qualite= parseInt(Cookies.get("qualite"));
+    total=dure+periode+loisir+slider+accompagnant+frequence+qualite;
+     alert(total);
+    // document.getElementById("nomCokkies").innerText = total;
+     
+}
 //******************************************
 //*************FUNCTION ETOILE**************
 //******************************************
 
-const allStars = document.querySelectorAll(".fa-star");
-    
-
-init();
-
-function init() {
-allStars.forEach((star) => {
-    star.addEventListener("click", saveRating);
-    star.addEventListener("mouseover", addCSS);
-    star.addEventListener("mouseleave", removeCSS);
-});
-}
-
-function saveRating(e) {
-
-console.log(e.target.dataset);
-removeEventListenersToAllStars();
-}
-
-function removeEventListenersToAllStars() {
-allStars.forEach((star) => {
-    star.removeEventListener("click", saveRating);
-    star.removeEventListener("mouseover", addCSS);
-    star.removeEventListener("mouseleave", removeCSS);
-});
-}
-
-function addCSS(e, css = "checked") {
-const overedStar = e.target;
-overedStar.classList.add(css);
-const previousSiblings = getPreviousSiblings(overedStar);
-
-previousSiblings.forEach((elem) => elem.classList.add(css));
-}
-
-function removeCSS(e, css = "checked") {
-const overedStar = e.target;
-overedStar.classList.remove(css);
-const previousSiblings = getPreviousSiblings(overedStar);
-previousSiblings.forEach((elem) => elem.classList.remove(css));
-}
-
-function getPreviousSiblings(elem) {
-
-let sibs = [];
-const spanNodeType = 1;
-while ((elem = elem.previousSibling)) {
-    if (elem.nodeType === spanNodeType) {
-    sibs = [elem, ...sibs];
+jQuery(document).ready(function () {
+  
+    function setRating(rating) {
+      $('#rating-input').val(rating);
+      // fill all the stars assigning the '.selected' class
+      $('.rating-star').removeClass('fa-star-o').addClass('selected');
+      // empty all the stars to the right of the mouse
+      $('.rating-star#rating-' + rating + ' ~ .rating-star').removeClass('selected').addClass('fa-star-o');
     }
-}
-return sibs;
-}
+    
+    $('.rating-star')
+    .on('mouseover', function(e) {
+      var rating = $(e.target).data('rating');
+      // fill all the stars
+      $('.rating-star').removeClass('fa-star-o').addClass('fa-star');
+      // empty all the stars to the right of the mouse
+      $('.rating-star#rating-' + rating + ' ~ .rating-star').removeClass('fa-star').addClass('fa-star-o');
+    })
+    .on('mouseleave', function (e) {
+      // empty all the stars except those with class .selected
+      $('.rating-star').removeClass('fa-star').addClass('fa-star-o');
+    })
+    .on('click', function(e) {
+      var rating = $(e.target).data('rating');
+      setRating(rating);
+    })
+    .on('keyup', function(e){
+      // if spacebar is pressed while selecting a star
+      if (e.keyCode === 32) {
+        // set rating (same as clicking on the star)
+        var rating = $(e.target).data('rating');
+        setRating(rating);
+      }
+    });
+  });

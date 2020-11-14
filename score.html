@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <title>Enquête de satisfaction </title>
+</head>
+
+<body>
+    <div class="container" >
+        <header>
+            <h2>Enquête de satisfaction </h2>
+            <img src="images/logo.png" alt="" style="float: left;margin-top:-90px ;height: 200px;width: 200px;">
+            <div class="progress-bar">
+                <div class="step">
+                    <div class="bulle">
+                        <span >1</span>
+                        <div class="check"></div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="bulle">
+                        <span>2</span>
+                        <div class="check"></div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="bulle">
+                        <span>3</span>
+                        <div class="check"></div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="bulle">
+                        <span>4</span>
+                        <div class="check"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="form-outer">
+           
+
+                <!--   ************
+                        *** PAGE5 ***
+                        *************-->
+
+                <div class="page" style="display: flex;">
+                    <div class="marge">
+                        <div class="title">SCORE</div>
+                        <div class="filed_radio">
+                            <legend>
+                                <p id="cookies4"></p>
+                                <img src="images/fireworks.png"
+                                    style="position: absolute;height:100px;width: 100px; transform: rotate(-90deg);margin-left: -100px;"
+                                    alt="">
+                                <img src="images/fireworks.png"
+                                    style="position: absolute;height:100px;width: 100px; transform: rotate(90deg);margin-left: 150px;"
+                                    alt="">
+                                vous avez un score de : <p id="score"></p>
+                            </legend>
+                        </div>
+                        <div class="filed">
+
+                        </div>
+                        <div class="filed_radio">
+                           
+                        </div>
+
+                        <div class="filed btns" style="margin-top: 300px;">
+                            <button class="prev-4 prev">Précédent</button>
+                            <button class="submit" onclick="validationPage5()">Envoyer</button>
+                        </div>
+                    </div>
+                    <div class="img">
+                        
+                    </div>
+                </div>
+
+           
+        </div>
+
+    </div>
+    <script>
+    // Récupérer les valeurs dans l'URL passée par la méthode GET du formulaire
+// en créant une instance de l'objet URLSearchParams
+let urlParams = new URLSearchParams(window.location.search);
+// window.location.search aura pour valeur par exemple : ?nom=Joe&ville=Toronto
+let leNom;
+let Prenom;
+/* 
+    Récupérer les données passées en paramètres dans l'URL
+    en utilisant l'objet urlParams instancié à partir de URLSearchParams
+*/
+
+if (urlParams.has('nom')) {leNom = urlParams.get('nom');}
+if (urlParams.has('prenom')) {Prenom = urlParams.get('prenom');}
+if (urlParams.has('duree')) {duree = urlParams.get('duree');}
+if (urlParams.has('loisir')) {loisir = urlParams.get('loisir');}
+if (urlParams.has('slider')) {slider = urlParams.get('slider');}
+if (urlParams.has('conjoint')) {conjoint = urlParams.get('conjoint');}
+if (urlParams.has('enfant')) {enfant = urlParams.get('enfant');}
+if (urlParams.has('amis')) {amis = urlParams.get('amis');}
+if (urlParams.has('seul')) {seul = urlParams.get('seul');}
+if (urlParams.has('collegues')) {collegues = urlParams.get('collegues');}
+if (urlParams.has('frequence')) {frequence = urlParams.get('frequence');}
+if (urlParams.has('Visibilite')) {Visibilite = urlParams.get('Visibilite');}
+if (urlParams.has('Ergonomie')) {Ergonomie = urlParams.get('Ergonomie');}
+if (urlParams.has('Confidentialite')) {Confidentialite = urlParams.get('Confidentialite');}
+if (urlParams.has('Garanties')) {Garanties = urlParams.get('Garanties');}
+if (urlParams.has('Securite')) {Securite = urlParams.get('Securite');}
+if (urlParams.has('enfant')) {enfant = urlParams.get('enfant');}
+if (urlParams.has('enfant')) {enfant = urlParams.get('enfant');}
+if (urlParams.has('enfant')) {enfant = urlParams.get('enfant');}
+if (urlParams.has('enfant')) {enfant = urlParams.get('enfant');}
+
+
+
+
+
+
+console.log(window.location.search);
+console.log(Prenom)
+document.getElementById("cookies4").innerHTML ='Bien joué'+" "+leNom
+
+
+    </script>
+    <script src="JS.js"></script>
+</body>
+
+</html>
+
+<!-- 
+<p>Nous vous remercions d'avoir participer à l'enquête de satisfaction mise à votre
+    disposition. </p>
+<p>Sachez que toute l'attention sera portée à l'étude de vos réponse et suggestion .</p>
+<p>L’enquête est désormais terminée : nous sommes en train d’en analyser les différents
+    résultats, que nous partagerons avec vous tous prochainement !
+</p> -->
