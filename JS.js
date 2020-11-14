@@ -355,7 +355,7 @@ function validationPage4() {
 */
 function validationPage5() {
     setTimeout(function () {
-        alert("Merci");
+        alert("Nous vous remercions d'avoir participer à l'enquête de satisfaction mise à votre disposition Sachez que toute l'attention sera portée à l'étude de vos réponse et suggestion ");
         window.onload = function() {
             if (readCookie('auto-refresh') === 'YES') {
               deleteCookie('auto-refresh');
