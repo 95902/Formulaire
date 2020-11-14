@@ -356,7 +356,12 @@ function validationPage4() {
 function validationPage5() {
     setTimeout(function () {
         alert("Merci");
-        location.reload();
+        window.onload = function() {
+            if (readCookie('auto-refresh') === 'YES') {
+              deleteCookie('auto-refresh');
+              window.location.reload();
+            }
+          };
     }, 800)
     
 }
