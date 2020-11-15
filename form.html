@@ -19,7 +19,7 @@
             <div class="progress-bar">
                 <div class="step">
                     <div class="bulle">
-                        <span >1</span>
+                        <span>1</span>
                         <div class="check"></div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
             </div>
         </header>
         <div class="form-outer">
-            <form action="score.html" name="form"method="GET" >
+            <form action="score.html" name="form" method="GET">
 
                 <!--   *************
                     *** PAGE1 ***
@@ -260,15 +260,26 @@
                             <h4 id="question7">Quelle votre avis sur les compagnies de voyage</h4>
                         </div>
                         <div style="display: flex;">
-                            <input type="number" name="rating" id="rating-input" min="1" max="5"/>
-                              <div class="rating" role="optgroup">
-                                <!-- in Rails just use 1.upto(5) -->  
-                                <i class="fa fa-star-o fa-2x rating-star" id="rating-1" data-rating="1" tabindex="0" aria-label="Rate as one out of 5 stars" role="radio"onmousedown="verification_page_3(this.id)"></i>
-                                <i class="fa fa-star-o fa-2x rating-star" id="rating-2" data-rating="2" tabindex="0" aria-label="Rate as two out of 5 stars" role="radio"onmousedown="verification_page_3(this.id)"></i>
-                                <i class="fa fa-star-o fa-2x rating-star" id="rating-3" data-rating="3" tabindex="0" aria-label="Rate as three out of 5 stars" role="radio"onmousedown="verification_page_3(this.id)"></i>
-                                <i class="fa fa-star-o fa-2x rating-star" id="rating-4" data-rating="4" tabindex="0" aria-label="Rate as four out of 5 stars" role="radio"onmousedown="verification_page_3(this.id)"></i>
-                                <i class="fa fa-star-o fa-2x rating-star" id="rating-5" data-rating="5" tabindex="0" aria-label="Rate as five out of 5 stars" role="radio"onmousedown="verification_page_3(this.id)"></i>
-                              </div>
+                            <input type="number" name="rating" id="rating-input" min="1" max="5"
+                                style="display: none;" />
+                            <div class="rating" role="optgroup">
+                                <!-- in Rails just use 1.upto(5) -->
+                                <i class="fa fa-star-o fa-2x rating-star" id="rating-1" data-rating="1" tabindex="0"
+                                    aria-label="Rate as one out of 5 stars" role="radio"
+                                    onmousedown="verification_page_3(this.id)"></i>
+                                <i class="fa fa-star-o fa-2x rating-star" id="rating-2" data-rating="2" tabindex="0"
+                                    aria-label="Rate as two out of 5 stars" role="radio"
+                                    onmousedown="verification_page_3(this.id)"></i>
+                                <i class="fa fa-star-o fa-2x rating-star" id="rating-3" data-rating="3" tabindex="0"
+                                    aria-label="Rate as three out of 5 stars" role="radio"
+                                    onmousedown="verification_page_3(this.id)"></i>
+                                <i class="fa fa-star-o fa-2x rating-star" id="rating-4" data-rating="4" tabindex="0"
+                                    aria-label="Rate as four out of 5 stars" role="radio"
+                                    onmousedown="verification_page_3(this.id)"></i>
+                                <i class="fa fa-star-o fa-2x rating-star" id="rating-5" data-rating="5" tabindex="0"
+                                    aria-label="Rate as five out of 5 stars" role="radio"
+                                    onmousedown="verification_page_3(this.id)"></i>
+                            </div>
                         </div>
                         <div class="filed btns">
                             <button class="prev-2 prev">Précédent</button>
@@ -323,10 +334,6 @@
         </div>
 
     </div>
-    <script>
-     console.log(document.getElementById("rating-input").dataset.rating);
-        console.log(document.getElementById("rating-input").value);
-    </script>
     <script src="JS.js"></script>
 </body>
 
