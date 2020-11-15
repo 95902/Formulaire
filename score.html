@@ -51,17 +51,16 @@
 
             <div class="page" style="display: flex;">
                 <div class="marge">
-                    <div class="title">SCORE</div>
                     <div class="filed_radio">
-                        <legend>
+                        <legend style="margin-left: 100px; width: 150px;" >
                             <p id="cookies4"></p>
                             <img src="images/fireworks.png"
-                                style="position: absolute;height:100px;width: 100px; transform: rotate(-90deg);margin-left: -100px;"
+                                style="position: absolute;height:100px;width: 100px; transform: rotate(-90deg);margin-left: -110px;"
                                 alt="">
                             <img src="images/fireworks.png"
-                                style="position: absolute;height:100px;width: 100px; transform: rotate(90deg);margin-left: 150px;"
+                                style="position: absolute;height:100px;width: 100px; transform: rotate(90deg);margin-left: 130px;  padding: 14px;"
                                 alt="">
-                            vous avez un score de : <p id="score"></p>
+                            vous avez un score de : <h2 id="score"style="padding:15px"></h2>
                         </legend>
                     </div>
                     <div class="filed">
@@ -71,11 +70,17 @@
 
                     </div>
 
-                    <div class="filed btns" style="margin-top: 300px;">
-                        <button class="submit" onclick="validationPage5()">Envoyer</button>
+                    <div class="filed btns" style="margin-top: 80px; margin-left: 100px;">
+                        <button  style ="width:120px;
+                        margin:15px 25px;
+                        height:40px;
+                        background-color:rgb(76, 89, 202);
+                        border:none;
+                        border-radius:4px;
+                        color:#fff;"class="submit" onclick="validationPage5()">Envoyer</button>
                     </div>
                 </div>
-                <div class="img" style="height:500px;width:800px;margin-left:50px">
+                <div class="img" style="height:500px;width:800px;margin-left:150px">
                     <canvas id="myChart"></canvas>
                 </div>
             </div>
@@ -188,7 +193,7 @@ function Decode(tChaine) {
         table[12]+table[13]+point
 
         document.getElementById("cookies4").innerHTML = 'Bien joué' + " " + leNom
-        document.getElementById("score").innerHTML = score
+        document.getElementById("score").innerHTML = score + " "+"points"
         console.log(score)
         console.log(window.location.search)
         console.log(score)
