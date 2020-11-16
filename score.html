@@ -40,7 +40,7 @@
                         </legend>
                     </div>
                     <div class="filed">
-                        <h4 >Votre prochaine destination sera </h4>
+                        <h4  style="margin-left: 40px; margin-top: 40px;">Votre prochaine destination:</h4><h3 id="destination"></h3>
                     </div>
 
                     <div class="filed btns" style="margin-top: 80px; margin-left: 100px;">
@@ -187,6 +187,9 @@
      // Configuration options go here
      options: {}
  });
+ destination=textarea1.split(" ");
+ console.log(destination[0]);
+ document.getElementById("destination").innerHTML = destination[0];
     </script>
     <script src="JS.js"></script>
 </body>
