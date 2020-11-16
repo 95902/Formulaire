@@ -16,30 +16,6 @@
             <h2>Enquête de satisfaction </h2>
             <img src="images/logo.png" alt="" style="float: left;margin-top:-90px ;height: 200px;width: 200px;">
             <div class="progress-bar">
-                <div class="step">
-                    <div class="bulle">
-                        <span>1</span>
-                        <div class="check"></div>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="bulle">
-                        <span>2</span>
-                        <div class="check"></div>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="bulle">
-                        <span>3</span>
-                        <div class="check"></div>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="bulle">
-                        <span>4</span>
-                        <div class="check"></div>
-                    </div>
-                </div>
             </div>
         </header>
         <div class="form-outer">
@@ -52,45 +28,39 @@
             <div class="page" style="display: flex;">
                 <div class="marge">
                     <div class="filed_radio">
-                        <legend style="margin-left: 100px; width: 150px;" >
-                            <p id="cookies4"></p>
+                        <legend style="margin-left: 100px; width: 200px;" >
+                            <h3 id="cookies4"></h3>
                             <img src="images/fireworks.png"
-                                style="position: absolute;height:100px;width: 100px; transform: rotate(-90deg);margin-left: -110px;"
+                                style="position: absolute;height:100px;width: 100px; transform: rotate(-90deg);margin-left: -190px;margin-top: 15px;"
                                 alt="">
                             <img src="images/fireworks.png"
-                                style="position: absolute;height:100px;width: 100px; transform: rotate(90deg);margin-left: 130px;  padding: 14px;"
+                                style="position: absolute;height:100px;width: 100px; transform: rotate(90deg);margin-left: 70px;padding: 14px;"
                                 alt="">
-                            vous avez un score de : <h2 id="score"style="padding:15px"></h2>
+                            <h4>vous avez un score de :</h4> <h2 id="score"style="padding:15px"></h2>
                         </legend>
                     </div>
                     <div class="filed">
-
-                    </div>
-                    <div class="filed_radio">
-
+                        <h4 >Votre prochaine destination sera </h4>
                     </div>
 
                     <div class="filed btns" style="margin-top: 80px; margin-left: 100px;">
                         <button  style ="width:120px;
                         margin:15px 25px;
                         height:40px;
-                        background-color:rgb(76, 89, 202);
+                        background-color:#0275c6;;
                         border:none;
                         border-radius:4px;
-                        color:#fff;"class="submit" onclick="validationPage5()">Envoyer</button>
+                        color:#fff;"class="submit" onclick="validationPage5()">Quitter</button>
                     </div>
                 </div>
                 <div class="img" style="height:500px;width:800px;margin-left:150px">
                     <canvas id="myChart"></canvas>
                 </div>
             </div>
-
-
         </div>
-
     </div>
     <script>
-function Decode(tChaine) {
+        function Decode(tChaine) {
         while (true) {
             var i = tChaine.indexOf("+");
             if (i < 0) break;
@@ -102,8 +72,6 @@ function Decode(tChaine) {
         //***RECUPERATION DONNEES 3 ******
         //******************************************
         // Récupérer les valeurs dans l'URL passée par la méthode GET du formulaire en créant une instance de l'objet URLSearchParams
-        
-
 
         let urlParams =new URLSearchParams(window.location.search);
 
@@ -198,7 +166,7 @@ function Decode(tChaine) {
         console.log(window.location.search)
         console.log(score)
 
-
+        var accompagnant2 =table[2]+table[3]+table[4]+ table[5]+table[6]
         var ctx = document.getElementById('myChart').getContext('2d');
         var chart = new Chart(ctx, {
      // The type of chart we want to create
@@ -206,12 +174,12 @@ function Decode(tChaine) {
  
      // The data for our dataset
      data: {
-         labels: ['duree', 'loisir', 'accompagnant','frequence','qualite','budget'],
+         labels: ['duree', 'loisir', 'accompagnant','budget'],
          datasets: [{
              label: 'My First dataset',
-             backgroundColor: ['rgb(255, 99, 132)','rgb(54,162,235)','rgb(255,205,86)','rgb(255,87,51)','rgb(214,137,16)','rgb(17,122,101)','rgb(238,28,28)'],
+             backgroundColor: ['rgb(255, 99, 132)','rgb(54,162,235)','rgb(255,205,86)','rgb(255,87,51)','rgb(17,122,101)'],
              borderColor: 'rgb(248,248,255)',
-             data: [ duree ,  loisir,table[2]+table[3]+table[4]+ table[5]+table[6],frequence,table[9]+table[10]+table[11]+table[12],slider/5
+             data: [ duree ,  loisir,accompagnant2,slider/5
             ]
          }]
      },
@@ -224,11 +192,3 @@ function Decode(tChaine) {
 </body>
 
 </html>
-
-<!-- 
-<p>Nous vous remercions d'avoir participer à l'enquête de satisfaction mise à votre
-    disposition. </p>
-<p>Sachez que toute l'attention sera portée à l'étude de vos réponse et suggestion .</p>
-<p>L’enquête est désormais terminée : nous sommes en train d’en analyser les différents
-    résultats, que nous partagerons avec vous tous prochainement !
-</p> -->
