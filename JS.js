@@ -46,7 +46,7 @@ function verification(nom_controle) {
     //validation civilite//
     if (nom_controle == 'civilite') {
         if (document.getElementById(nom_controle).value > 0) {
-            document.getElementById(nom_controle).style.border = '#9FE855 1px solid';
+            document.getElementById(nom_controle).style.border = '#9FE855 2px solid';
             b_civilit = true
         }
         else {
@@ -67,7 +67,7 @@ function verification(nom_controle) {
         else {
             b_nom = true;
             b_prenom = true;
-            document.getElementById(nom_controle).style.border = '#096A09 2px solid';
+            document.getElementById(nom_controle).style.border = '#9FE855 2px solid';
         }
     }
     //validation email//
@@ -79,7 +79,7 @@ function verification(nom_controle) {
         }
         else {
             b_email = true
-            document.getElementById(nom_controle).style.border = '#9FE855 1px solid';
+            document.getElementById(nom_controle).style.border = '#9FE855 2px solid';
         }
     }
     //validation telephone//

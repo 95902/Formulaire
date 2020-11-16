@@ -3,6 +3,7 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    zoom: 75%;
 
 }
 /*header*/
@@ -24,6 +25,7 @@ body{
     padding: 30px 24px 0px 35px ;
     margin-top: 20px;
 }
+
  .container .form-outer {
   overflow: hidden;  
     width: 102%;
@@ -32,8 +34,17 @@ body{
 img{
  height: 100%;
 
- padding-right: 30px;
-
+}
+.image{
+    height: 750px;
+      filter: grayscale(1);/*6*/
+     /*7 - Transition */
+   transition-property: filter width; 
+   transition-duration: .3s;
+   transition-timing-function: ease; 
+}
+.img:hover .image {
+    filter: grayscale(0)
 }
 
 .form-outer form{
@@ -66,18 +77,18 @@ top: -25px;
 }
 
 .form-outer form .page .filed input{
-    height: 90%;
-    width: 90%;
+    height: 80%;
+    width: 80%;
     border: 1px solid lightgrey;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 16px;
     padding-left: 5px;
     margin-left: -20px;
 }
 /* SELECT*/
 .form-outer form .page .filed select{
-    height: 90%;
-    width: 90%;
+    height: 80%;
+    width: 80%;
     border: 1px solid lightgrey;
     border-radius: 5px;
     font-size: 14px;
@@ -102,7 +113,7 @@ font-size: 16px;
 .form-outer form .page .filed_radio h4{
     width: 500px;
     text-align: left;
-    font-size: 16px;
+    font-size: 18px;
 }
 .form-outer form .page .filed_radio input{
     height: 40%;
