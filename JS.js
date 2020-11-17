@@ -116,7 +116,8 @@ function validationPage1() {
     if (b_civilit == false && b_nom == false && b_prenom == false && b_email == false && b_telephone == false && b_statut == false) {
         alert("Veuillez compléter tout les champs")
 
-    } if (b_civilit == false) { document.getElementById("civilite").style.border = '#CC3300 3px solid'; }
+    } 
+    if (b_civilit == false) { document.getElementById("civilite").style.border = '#CC3300 3px solid'; }
     if (b_nom == false) { document.getElementById("nom").style.border = '#CC3300 3px solid'; }
     if (b_prenom == false) { document.getElementById("prenom").style.border = '#CC3300 3px solid'; }
     if (b_email == false) { document.getElementById("email").style.border = '#CC3300 3px solid'; }
@@ -129,7 +130,6 @@ function validationPage1() {
             bulle[current - 1].classList.add("active");
             progressCheck[current - 1].classList.add("active");
             current += 1;
-            console.log(current);
         });
     }
 }
