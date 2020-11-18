@@ -263,6 +263,10 @@ form .page .btns button.next{
     display: block;
     background-color:#2042da;
 }
+.progress-bar .step.bulle:last-child .check:before,
+.progress-bar .step.bulle:last-child .check:after{
+    display: none;
+}
 .rating {
 	cursor: pointer;
 }

@@ -6,10 +6,10 @@ const secondBtnPrecedentSelc = document.querySelector(".prev-2");
 const secondBtnSuivantSelc = document.querySelector(".next-2");
 const troisdBtnPrecedentSelc = document.querySelector(".prev-3");
 const sumbitBtn = document.querySelector(".submit");
-const progressCheck = document.querySelectorAll(".step .check");
+const progressCheck = document.querySelectorAll(" .check");
 const bulle = document.querySelectorAll(".step .bulle");
-let max = 4;
-let current = 1;
+let max = 10;
+var current = 1;
 
 //******************************************
 //*************BOUTON PRECEDENT**************
@@ -18,21 +18,25 @@ btnPrecedentSelc.addEventListener("click", function () {
     slidePage.style.marginLeft = "0%"
     bulle[current - 2].classList.remove("active");
     progressCheck[current - 2].classList.remove("active");
-    current -= 1;
+    current -= 2;
+    console.log(current);
+    
 
 });
 secondBtnPrecedentSelc.addEventListener("click", function () {
     slidePage.style.marginLeft = "-25%"
     bulle[current - 2].classList.remove("active");
     progressCheck[current - 2].classList.remove("active");
-    current -= 1;
+    current -= 2;
+    console.log(current);
 
 });
 troisdBtnPrecedentSelc.addEventListener("click", function () {
     slidePage.style.marginLeft = "-50%"
     bulle[current - 2].classList.remove("active");
     progressCheck[current - 2].classList.remove("active");
-    current -= 1;
+    current -= 2;
+    console.log(current);
 
 });
 
@@ -130,6 +134,7 @@ function validationPage1() {
             bulle[current - 1].classList.add("active");
             progressCheck[current - 1].classList.add("active");
             current += 1;
+            console.log(current);
         });
     }
 }
@@ -187,6 +192,7 @@ function validationPage2() {
             bulle[current - 1].classList.add("active");
             progressCheck[current - 1].classList.add("active");
             current += 1;
+            console.log(current);
         });
     }
 }
@@ -260,6 +266,7 @@ function validationPage3() {
             bulle[current - 1].classList.add("active");
             progressCheck[current - 1].classList.add("active");
             current += 1;
+            console.log(current);
         });
 
     }
@@ -326,6 +333,7 @@ function validationPage4() {
             bulle[current - 1].classList.add("active");
             progressCheck[current - 1].classList.add("active");
             current += 1;
+            console.log(current);
             document.forms["form"].submit()
         });
     }
